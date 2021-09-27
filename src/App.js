@@ -18,16 +18,20 @@ function App() {
 
   return (
     <div className="App">
-      <div className="row row-cols-1 row-cols-md-3 g-4">
-        <Row className="g-4" xs={1} md={2}>
-          {
-            news.map(nw => <Card news={nw}></Card>)
-          }
-        </Row>
+      {
+        news.length === 0 ? <Spinner animation="border" /> :
+          <Row className="g-4" xs={1} md={3} lg={4}>
+            {
+              news.map(nw => <Card news={nw}></Card>)
+            }
+          </Row>
+      }
 
 
 
-      </div>
+
+
+
     </div>
   );
 }
